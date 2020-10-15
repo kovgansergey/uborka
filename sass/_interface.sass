@@ -1,0 +1,36 @@
+*
+	box-sizing: border-box
+	margin: 0
+	padding: 0
+body
+	+reg
+	color: $main-black
+	font-size: 16px
+.container
+	width: 1140px
+	margin: auto
+.btn
+	background-color: $main-color
+	color: #fff
+	font-weight: bold
+	border-radius: 35px
+	border: none
+	outline: none
+	cursor: pointer
+@media (min-width: 992px)
+	.btn:hover
+		background-color: darken($main-color, 5%)
+@media (max-width: 1199px)
+	.container
+		width: 960px
+@media (max-width: 991px)
+	.container
+		width: 720px
+@media (max-width: 767px)
+	.container
+		width: 540px
+@media (max-width: 576px)
+	.container
+		max-width: 300px
+// background-color: darken($main-color, 9%)
+// background-image: linear-gradient(to top, $main-color 0%, change-color($main-color, $saturation: 91%) 100%)
