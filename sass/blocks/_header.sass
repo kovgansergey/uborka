@@ -169,6 +169,68 @@
               transform: rotate(90deg)
           &__content
             display: block
+// форма с валидацией чекбокса
+.form
+  &-dialog
+    margin: 0 auto
+    padding: 20px
+    width: 500px
+    border: 2px solid $main-color
+    border-radius: 10px
+  &-input-block
+    margin-bottom: 15px
+    display: flex
+    flex-direction: column
+  &-input
+    padding: 5px
+    width: 100%
+    border: 1px solid $main-color
+    border-radius: 5px
+    outline: none
+  &-checkbox-block
+    margin-top: 15px
+  &-label
+    margin-bottom: 5px
+    &-checkbox
+      position: relative
+      display: flex
+      align-items: center
+      &::before
+        content: ''
+        margin-right: 5px
+        width: 15px
+        height: 15px
+        border: 1px solid $main-color
+        border-radius: 3px
+        cursor: pointer
+      // & .error
+      //   position: absolute
+      //   bottom: 0
+      //   left: 0
+      //   width: 15px
+      //   height: 15px
+      //   border: 1px solid red
+      //   border-radius: 3px
+  &-checkbox
+    position: absolute
+    opacity: 0
+    visibility: hidden
+    &:checked + .form-label-checkbox
+      &::before
+        background: $main-color
+      &::after
+        content: ''
+        position: absolute
+        left: -3px
+        bottom: 4px
+        width: 24px
+        height: 24px
+        background: url('../img/check-mark.png') no-repeat center / 24px
+  &-submit
+    display: block
+    margin: 10px auto 0
+    width: 250px
+    height: 35px
 @media (min-width: 992px)
   .header__nav-menu .menu__item:hover
     background-color: $main-black

@@ -46,3 +46,47 @@ accordeon.addEventListener('click', event => {
     openCardAnimate(target.closest('.accordeon-card').querySelector('.accordeon-card__content'));
   }
 });
+
+$('[type=tel]').mask('+7 (000) 000-00-00');
+
+$('#form1').validate({
+  rules: {
+    userName: {
+      required: true
+    },
+    userPhone: {
+      required: true
+    },
+    check: 'required'
+  },
+  messages: {
+    userName: {
+      required: 'обязательно'
+    },
+    userPhone: {
+      required: 'обязательно'
+    },
+    check: 'ss'
+  },
+  errorPlacement: function (error, element) {
+    if (element.attr("type") == "checkbox") {
+      element.next('label').append(error); //addClass()
+    } else {
+      error.insertAfter($(element));
+    }
+  },
+  // highlight: function (element, errorClass) {
+  //   if (element.attr("type") == "checkbox") {
+  //     element.next('label').addClass(errorClass);
+  //   }
+  // },
+  // unhighlight: function (element, errorClass) {
+  //   if (element.attr("type") == "checkbox") {
+  //     element.next('label').removeClass(errorClass);
+  //   }
+  // },
+  submitHandler: function (form) {
+    alert('valid form submitted');
+    return false;
+  }
+});
